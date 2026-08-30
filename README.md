@@ -2,8 +2,8 @@
 
 Heimdall is a 4-layered defense system designed to shield users from advanced financial scams, brand spoofing, phishing links, and deceptive QR codes. Built for the Smart India Hackathon 2026 by team CodeFellas, it features a combination of various scam detection techniques to ensure fast and efficient prevention.
 
-##Layer 1 & 2: Brand Whitelist & Malicious DB Lookup##
+## Layer 1 & 2: Brand Whitelist & Malicious DB Lookup ##
 Instantly matches incoming keyword logs with safe corporate domain certificates (e.g., SBI, HDFC) & queries local/global blacklists via quick key-value validation caches to intercept known ongoing campaigns.
 
-##Layer 3 & 4: Urgency NLP Analysis & Domain Age & Verification##
+## Layer 3 & 4: Urgency NLP Analysis & Domain Age & Verification ##
 Assesses sentence context for fear tactics, false award traps, or fake UPI constraints to catch scams that contain zero hyperlinks & dynamically checks registrar metadata. Newly registered platforms (<15-30 days) or anonymous hosts trigger immediate threat indicators.
