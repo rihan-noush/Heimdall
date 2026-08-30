@@ -1,9 +1,64 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>My App</title>
-    </head>
-    <body>
-        <h1>Welcome to My App</h1>
-        <p>This is a simple FastAPI application.</p>
-    </body>
+<head>
+    <title>Scam Detector</title>
+</head>
+<body>
+    <h1>Scam Detector</h1>
+    
+    <form id="scamForm">
+        <label for="userInput"><strong>Message Text:</strong></label><br>
+        <textarea id="userInput" rows="4" cols="50" placeholder="Paste message here (optional)..."></textarea>
+        <br><br>
+        
+        <label for="imageInput"><strong>Upload Screenshot / QR Code:</strong></label><br>
+        <input type="file" id="imageInput" accept="image/*">
+        <br><br>
+        
+        <button type="submit">Analyze Content</button>
+    </form>
+
+    <div id="result-container" style="margin-top: 20px;">
+        <h2 id="scamResult"></h2>
+        <p><strong>Extracted Links & Database Status:</strong></p>
+        <pre id="linksResult" style="background: #f4f4f4; padding: 10px;"></pre>
+        <p><strong>Analysis Details:</strong></p>
+        <p id="detailsResult" style="white-space: pre-line;"></p>
+    </div>
+
+    <script>
+        document.getElementById('scamForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const textValue = document.getElementById('userInput').value;
+            const fileInput = document.getElementById('imageInput').files[0];
+
+            const formData = new FormData();
+            if (textValue) formData.append('text', textValue);
+            if (fileInput) formData.append('file', fileInput);
+
+            document.getElementById('scamResult').innerText = "Analyzing simultaneously & checking databases...";
+            document.getElementById('linksResult').innerText = "";
+            document.getElementById('detailsResult').innerText = "";
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/detect', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.detail || "Something went wrong.");
+                }
+
+                document.getElementById('scamResult').innerText = "Scam: " + data.scam;
+                document.getElementById('linksResult').innerText = data.links;
+                document.getElementById('detailsResult').innerText = data.details;
+            } catch (error) {
+                document.getElementById('scamResult').innerText = "Error: " + error.message;
+            }
+        });
+    </script>
+</body>
 </html>
