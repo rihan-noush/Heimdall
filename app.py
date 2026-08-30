@@ -13,7 +13,7 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
 # 1. Mount the 'static' folder for your CSS, JS, and Images
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # 2. Point FastAPI to your 'templates' folder for HTML
 templates = Jinja2Templates(directory="templates")
