@@ -7,3 +7,4 @@ pyzbar==0.1.9
 Requests==2.34.2
 whois==1.20240129.2
 uvicorn==0.52.4
+Jinja2==3.1.6
