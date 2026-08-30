@@ -8,19 +8,18 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 message = input("Message: ")
 
-response = client.models.generate_content(
-    model="gemini-3.5-flash",
-    contents=f"""
-Check this message for scam risk.
+prompt = f"""
+Check this message for scam risk in the following criteria (0 - No, 1 - Yes):
+urgency, threat, reward temptation, request of sensitive information, impersonation, language style anomaly, and the message intent.
 
-Reply in exactly 4 lines:
-Risk: LOW/MEDIUM/HIGH
-Score: 0-100
-Flags: max 3 short keywords
-Action: max 8 words
+Reply with just the numbers separated by commas.
 
 Message: {message}
 """
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=prompt
 )
 
 print("\n" + response.text)
