@@ -15,12 +15,12 @@ Assesses sentence context for fear tactics, false award traps, or fake UPI const
 
 ## Setup ## 
 ### Clone the project repository ###
-` git clone https://github.com ` <br>
-` cd sih-codefellas `
+``` git clone https://github.com ``` <br>
+``` cd sih-codefellas ```
 
 ### Launch the backend server ###
 Heimdall relies on main.py to process validation strings and serve web elements. <br>
-` python main.py `
+``` python main.py ```
 
 ### Access the application dashboard ###
 Open your browser and navigate to the local host address provided in your terminal output.
