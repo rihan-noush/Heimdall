@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import whois
 from PIL import Image
-from google import genai
+import google.generativeai as genai
 
 # Setup FastAPI App
 app = FastAPI(title="Heimdall Omniscient Backend")
