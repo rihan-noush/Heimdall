@@ -8,3 +8,6 @@ pyzbar==0.1.9
 Requests==2.34.2
 uvicorn==0.52.4
 Jinja2==3.1.6
+google==3.0.0
+google-auth==2.57.0
+google-genai==2.20.0
