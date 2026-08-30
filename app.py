@@ -1,10 +1,3 @@
-import ageCheck
-import analyzer
-import databaseCrossCheck
-import qrcodeReader
-import textExtractor
-import textSplitter
-
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
