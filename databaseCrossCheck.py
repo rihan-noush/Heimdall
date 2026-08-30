@@ -1,7 +1,27 @@
 import requests
 import json
+from urllib.parse import urlparse
 
 url = input("Enter URL: ")
+
+def unshorten_url(url):
+    """Resolves short links (bit.ly, tinyurl, etc.) to their target URL."""
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.head(
+            url, allow_redirects=True, timeout=5, headers=headers
+        )
+        return response.url
+    except Exception:
+        return url
+
+real_url = unshorten_url(url)
+domain = urlparse(real_url).netloc.lower()
+
+if domain.startswith("www."):
+    domain = domain[4:]
+
+
 
 def test_scam_link(url_to_check, api_key):
     endpoint = f"https://safebrowsing.googleapis.com/v4/threatMatches:find?key={api_key}"
@@ -55,4 +75,4 @@ def test_scam_link(url_to_check, api_key):
 # --- Example Usage ---
 API_KEY = "AIzaSyCbHwJqBmzxY14bnE65qjxYfuuzgfWNT2s"
 
-test_scam_link(url, API_KEY)
+test_scam_link(real_url, API_KEY)
