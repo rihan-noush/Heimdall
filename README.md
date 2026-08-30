@@ -14,13 +14,13 @@ Instantly matches incoming keyword logs with safe corporate domain certificates 
 Assesses sentence context for fear tactics, false award traps, or fake UPI constraints to catch scams that contain zero hyperlinks & dynamically checks registrar metadata. Newly registered platforms (<15-30 days) or anonymous hosts trigger immediate threat indicators.
 
 ## Setup ## 
-### Clone the project repository ###
+### 1. Clone the project repository ###
 ``` git clone https://github.com ``` <br>
 ``` cd sih-codefellas ```
 
-### Launch the backend server ###
+### 2. Launch the backend server ###
 Heimdall relies on main.py to process validation strings and serve web elements. <br>
 ``` python main.py ```
 
-### Access the application dashboard ###
+### 3. Access the application dashboard ###
 Open your browser and navigate to the local host address provided in your terminal output.
