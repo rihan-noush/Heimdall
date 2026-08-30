@@ -13,6 +13,10 @@ Instantly matches incoming keyword logs with safe corporate domain certificates 
 ### Layer 3 & 4: Urgency NLP Analysis & Domain Age & Verification ###
 Assesses sentence context for fear tactics, false award traps, or fake UPI constraints to catch scams that contain zero hyperlinks & dynamically checks registrar metadata. Newly registered platforms (<15-30 days) or anonymous hosts trigger immediate threat indicators.
 
+## Demo ##
+
+https://drive.google.com/drive/folders/1ymTY4WSJs4dt3zbxwqrXqJBaP76-fkVz
+
 ## Setup ## 
 ### 1. Clone the project repository ###
 ``` git clone https://github.com ``` <br>
