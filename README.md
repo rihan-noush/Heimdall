@@ -10,11 +10,11 @@ Assesses sentence context for fear tactics, false award traps, or fake UPI const
 
 ## Installation & Local Setup ## 
 ### Clone the project repository ###
-` git clone https://github.com `
+` git clone https://github.com ` <br>
 ` cd sih-codefellas `
 
 ### Launch the backend server ###
-Heimdall relies on main.py to process validation strings and serve web elements:
+Heimdall relies on main.py to process validation strings and serve web elements: <br>
 ` python main.py `
 
 ### Access the application dashboard ###
