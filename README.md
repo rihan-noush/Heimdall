@@ -14,7 +14,7 @@ Assesses sentence context for fear tactics, false award traps, or fake UPI const
 ` cd sih-codefellas `
 
 ### Launch the backend server ###
-Heimdall relies on main.py to process validation strings and serve web elements: <br>
+Heimdall relies on main.py to process validation strings and serve web elements <br>
 ` python main.py `
 
 ### Access the application dashboard ###
